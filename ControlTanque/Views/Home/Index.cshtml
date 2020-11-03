@@ -1,0 +1,196 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+ 
+
+    <div id='content'>   
+        <section class="bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 my-2">
+                        <div class="card rounded-0">
+                            <div class="card-header bg-light">
+                                <h6 class="font-weigh-bold mb-0">Control llenado de tanque</h6>
+                            </div>
+                            <div class="card-body">
+                                <div id='main'>
+                                    <div class="chart" id="chart"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 my-2">
+                        <div class="card rounded-0">
+                            <div class="card-header bg-light">
+                                <h6 class="font-weigh-bold mb-0">Niveles</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex border-bottom py-2" >
+                                    <div class="mr-3"><h2 class="align-self-center mb-0"><i class="icon ion-md-speedometer"></i></h2></div>
+                                    <div class="align-self-center mb-0">
+                                        <h6 class="d-inline-block mb-0">Nivel del tanque</h6>
+                                        <div class="d-block"><input class="form-control mr-sm-2" type="text" id="levelShow" readonly></div>
+                                    </div> 
+                                    </div>
+                                
+                                <div class="d-flex border-bottom py-2 mb-2">                                  
+                                    <div class="align-self-center mb-0">
+                                        <h6 class="d-inline-block mb-2">Modifica el nivel</h6>
+                                        <div class="d-block mb-2">
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-number" data-type="minus" id="minusModify"data-field="modify" >
+                                                        <i class="icon ion-md-remove"></i>
+                                                    </button>   
+                                                    </span>                                                 
+                                                <input type="text" name="modify" class="form-control input-number" min="4" max="100" id="inputModify">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-number" data-type="plus" id="plusModify" data-field="modify">
+                                                        <i class="icon ion-md-add"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <div class="row justify-content-start ml-5">                                   
+                                    <div>
+                                        <button class="btn btn-danger" id="inputClear">Vaciar Tanque</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 my-2">
+                        <div class="card rounded-0">
+                            <div class="card-header bg-light">
+                                <h6 class="font-weigh-bold mb-0">Capacidad y alertas</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex border-bottom py-2">
+                                    <div class="mr-3"><h2 class="align-self-center mb-0"><i class="icon ion-md-thermometer"></i></h2></div>
+                                    <div class="align-self-center mb-0">
+                                        <h5 class="d-inline-block mb-3">Capacidad</h5>
+                                        <h6 class="d-block mb-2">Máximo</h6>  
+                                        <div class="d-block mb-2">
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-number" data-type="minus" id="minusMax" data-field="maximum">
+                                                        <i class="icon ion-md-remove"></i>
+                                                    </button>
+                                                </span>
+                                                <input type="text" name="maximum" class="form-control input-number"  id="inputMaximum">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-number" data-type="plus" id="plusMax" data-field="maximum">
+                                                        <i class="icon ion-md-add"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>   
+                                        
+                                        <h6 class="d-block mb-2">Mínimo</h6>
+                                        <div class="d-block mb-2">
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-number" data-type="minus" id="minusMin"data-field="minimum">
+                                                        <i class="icon ion-md-remove"></i>
+                                                    </button>
+                                                </span>
+                                                <input type="text" name="minimum" class="form-control input-number" min="1" max="100" id="inputMinimum">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-number" data-type="plus" id="plusMin" data-field="minimum">
+                                                        <i class="icon ion-md-add"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>  
+                                        
+                                                                           
+                                    </div>
+
+
+                                </div>
+
+                                <div class="d-flex border-bottom py-2 mb-2">
+                                    <div class="mr-3"><h2 class="align-self-center mb-0"><i class="icon ion-md-nuclear"></i></h2></div>
+                                    <div class="align-self-center mb-0">
+                                        <h5 class="d-inline-block mb-3">Alarmas</h5>
+                                        <h6 class="d-block mb-2">Nivel alto</h6>
+                                        <div class="d-block mb-2">
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="high">
+                                                        <i class="icon ion-md-remove"></i>
+                                                    </button>
+                                                </span>
+                                                <input type="text" name="high" class="form-control input-number" min="1" max="100" id="inputHigh">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="high">
+                                                        <i class="icon ion-md-add"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <h6 class="d-block mb-2">Nivel bajo</h6>
+                                        <div class="d-block mb-2">
+                                            <div class="input-group">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="low">
+                                                        <i class="icon ion-md-remove"></i>
+                                                    </button>
+                                                </span>
+                                                <input type="text" name="low" class="form-control input-number"  min="1" max="100" id="inputLow">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="low">
+                                                        <i class="icon ion-md-add"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>              
+              
+
+               
+                
+
+
+
+
+       
+
+
+    </div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+

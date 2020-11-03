@@ -1,0 +1,64 @@
+﻿:root{
+    --primary: #00796b;
+    --light: #fafafa;
+    --dark:#000000;
+    --gray:#bdbdbd;
+     
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    overflow:hidden;
+    font-family: 'Crimson Text', serif;
+    color:var(--primary);
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+/*content*/
+#content {
+    overflow-y:auto;
+    height:100vh;
+
+}
+
+
+.btn {
+    border:0;
+
+
+}
+
+
+.btn-primary {
+
+    background-color:var(--primary);
+
+}
+
+.btn-primary:hover{
+
+    background-color: var(--primary);
+
+}
+
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.bg-primary{background-color:var(--primary) !important;}
+.bg-light{background-color:var(--light) !important;}
+.bg-dark{background-color:var(--dark) !important;}
+.bg-gray{background-color:var(--gray) !important;}
+
+
